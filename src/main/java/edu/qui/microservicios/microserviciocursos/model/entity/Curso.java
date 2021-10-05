@@ -1,6 +1,7 @@
 package edu.qui.microservicios.microserviciocursos.model.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,8 @@ import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import edu.qui.microservicios.microserviciocomun.model.entity.Alumno;
 
 @Entity
 @Table(name = "cursos")
@@ -23,6 +26,8 @@ public class Curso {
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date created_at;
+	
+	private List<Alumno> alumnos;
 	
 	public Curso() {
 		this.id = 0;
